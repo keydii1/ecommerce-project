@@ -1,6 +1,6 @@
 import { Header } from "./Header"
 import './CheckoutPage.css'
-export function CheckoutPage() {
+export function CheckoutPage({cart}) {
   return (
     <>
     <Header cart={cart} />

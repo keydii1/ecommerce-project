@@ -1,6 +1,6 @@
 import { Header } from "./Header";
 import "./OrderPage.css";
-export function OrderPage() {
+export function OrderPage({cart}) {
   return (
     <>
       <Header  cart={cart} />
