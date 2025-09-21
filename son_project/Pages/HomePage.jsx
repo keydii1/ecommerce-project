@@ -1,17 +1,24 @@
 import axios from 'axios';
 import "./HomePage.css";
 import { Header } from "./Header";
-import {products} from 'D:/Workspace/Project Wed/Test/ecommerce-project/data/products.js'
+// import {products} from 'D:/Workspace/Project Wed/Test/ecommerce-project/data/products.js'
+// because use data from backend to generate the html
+import { useEffect, useState } from 'react';
 
 export function HomePage() {
+  const [products, setProducts]= useState([]);
+  useEffect(()=> {
   axios.get('http://localhost:3000/api/products')
   .then ( (response) => {
-    console.log(response.data);
+  setProducts( response.data);
   }
 );
+  },[]);
+
 
   return (
     <>
+    <title>E-Commerce</title>
     <Header />
       <div className="home-page">
         <div className="products-grid">
