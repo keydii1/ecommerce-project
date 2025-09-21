@@ -3,7 +3,7 @@ import "./OrderPage.css";
 export function OrderPage() {
   return (
     <>
-      <Header />
+      <Header  cart={cart} />
       <div className="orders-page">
         <div className="page-title">Your Orders</div>
         <div className="orders-grid">
