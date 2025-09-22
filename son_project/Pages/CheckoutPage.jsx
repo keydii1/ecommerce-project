@@ -14,18 +14,22 @@ export function CheckoutPage({cart}) {
   }, []);
   return (
     <>
-    <title>Checkout</title>
+    <title>Checkout Page</title>
     <Header cart={cart} />
     <div className="checkout-page">
       <div className="page-title">Review your order</div>
 
       <div className="checkout-grid">
         <div className="order-summary">
-          {cart.map((cartItem) => {
+          {deliveryOptions.length > 0 && cart.map((cartItem) => {
+            const selectDeliveryOption = deliveryOptions
+            .find((deliveryOption) => {
+              return deliveryOption.id === cartItem.deliveryOptionId;
+            })
             return (
           <div key={cartItem.productId} className="cart-item-container">
             <div className="delivery-date">
-              Delivery date: Tuesday, June 21
+              Delivery date:{dayjs(selectDeliveryOption.estimatedDeliveryTimeMs).format('dddd, MMMM D')}
             </div>
 
             <div className="cart-item-details-grid">
