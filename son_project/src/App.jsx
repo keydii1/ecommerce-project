@@ -11,7 +11,7 @@ import { useEffect,useState } from "react";
     const [cart,setCart] = useState([]);
 
     useEffect(() => {
-    axios.get('/api/products')
+    axios.get('/api/cart-items')
   .then((response) => {
     setCart(response.data);
   })
