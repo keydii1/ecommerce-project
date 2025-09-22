@@ -9,12 +9,13 @@ import { useEffect,useState } from "react";
 
  function App() {
     const [cart,setCart] = useState([]);
-
+    const [paymentSummary,setPaymentSummary] = useState(null);
     useEffect(() => {
     axios.get('/api/cart-items?expand=product')
   .then((response) => {
     setCart(response.data);
   })
+
     });
   return (
     <Routes>
