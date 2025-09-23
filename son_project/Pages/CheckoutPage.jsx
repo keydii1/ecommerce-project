@@ -6,7 +6,7 @@ import axios from 'axios';
 import {useState, useEffect} from 'react'
 export function CheckoutPage({cart}) {
   const [deliveryOptions, setDeliveryOptions] = useState([]);
-  const [paymentSummary,setPaymentSummary] = useState(null);
+    const [paymentSummary,setPaymentSummary] = useState(null);
 
   useEffect(() => {
     axios.get('/api/delivery-options?expand=estimatedDeliveryTime')

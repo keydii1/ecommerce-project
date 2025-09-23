@@ -62,20 +62,16 @@ export function HomePage({cart}) {
                 <option value="10">10</option>
               </select>
             </div>
-
             <div className="product-spacer"></div>
-
             <div className="added-to-cart">
               <img src="images/icons/checkmark.png" />
               Added
             </div>
-
             <button className="add-to-cart-button button-primary">
               Add to Cart
             </button>
           </div>
             )
-
           })}
         </div>
       </div>
