@@ -1,7 +1,6 @@
 import axios from 'axios';
 import "./HomePage.css";
 import { Header } from "../Header";
-import { formatMoney } from '../../src/utils/money';
 // import {products} from 'D:/Workspace/Project Wed/Test/ecommerce-project/data/products.js'
 // because use data from backend to generate the html
 import { useEffect, useState } from 'react';
