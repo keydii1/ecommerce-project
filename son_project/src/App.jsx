@@ -10,12 +10,14 @@ import { useEffect,useState } from "react";
  function App() {
     const [cart,setCart] = useState([]);
     useEffect(() => {
-    axios.get('/api/cart-items?expand=product')
-  .then((response) => {
-    setCart(response.data);
-  })
+    const fecthData = async () => {
+    const response = await axios.get('/api/cart-items?expand=product')
 
-    });
+    setCart(response.data);
+  };
+
+  fecthData();
+    }, []);
   return (
     <Routes>
       <Route index element={<HomePage cart={cart} />}></Route>
